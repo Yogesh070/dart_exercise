@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:new_flutter_project/widgets/rating_card.dart';
 
 class DemoWidget extends StatelessWidget {
@@ -9,10 +10,16 @@ class DemoWidget extends StatelessWidget {
     return Scaffold(
         body: ListView(
       children: [
-        Container(
-          height: 300,
-          color: Colors.red,
+        // Adding image as assets
+        Image.asset(
+          'assets/images/mandala.jpg',
+          fit: BoxFit.cover,
         ),
+        // SvgPicture.asset(
+        //   'assets/images/alien.svg',
+        //   height: 200,
+        //   width: 200,
+        // ),
         Container(
           padding: const EdgeInsets.all(24.0),
           child: const Column(
