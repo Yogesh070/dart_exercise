@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:new_flutter_project/demo.dart';
-// import 'package:new_flutter_project/scrolling_widget.dart';
+import 'package:new_flutter_project/home_page.dart';
+import 'package:new_flutter_project/second_page.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      home: DemoWidget(),
+    MaterialApp(
+      initialRoute: '/homepage',
+      routes: {
+        Homepage.homepageRoute: (context) => const Homepage(),
+        SecondPage.secondPageRoute: (context) => const SecondPage(),
+      },
     ),
   );
 }
