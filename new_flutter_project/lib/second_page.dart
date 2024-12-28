@@ -8,7 +8,7 @@ class SecondPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: Text('Second Page '),
+          child: const Text('Second Page '),
           onPressed: () {
             Navigator.pop(context);
           },
