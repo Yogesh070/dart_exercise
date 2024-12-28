@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_flutter_project/second_page.dart';
+import 'package:go_router/go_router.dart';
+import 'package:new_flutter_project/data.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -8,12 +9,6 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> images = [
-      'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Next Hours'),
@@ -50,8 +45,10 @@ class Homepage extends StatelessWidget {
                   itemCount: images.length,
                   itemBuilder: (context, i) => InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, SecondPage.secondPageRoute,
-                          arguments: i);
+                      context.goNamed('movie-details',
+                          pathParameters: {'movieId': i.toString()});
+                      // Navigator.pushNamed(context, SecondPage.secondPageRoute,
+                      //     arguments: i);
                     },
                     child: Container(
                         height: 100,
